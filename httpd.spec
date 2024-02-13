@@ -5,8 +5,8 @@
 
 Summary: Apache HTTP Server
 Name: httpd
-Version: 2.4.54
-Release: 1
+Version: 2.4.57
+Release: 2023_04_06
 URL: http://httpd.apache.org/
 Vendor: Apache Software Foundation
 Source0: http://www.apache.org/dist/httpd/httpd-%{version}.tar.bz2
@@ -150,6 +150,7 @@ rm -rf srclib/{apr,apr-util,pcre}
         --enable-mods-shared=all \
         --enable-ssl=static --with-ssl --enable-bucketeer \
         --enable-systemd=static \
+        --enable-cgid --enable-cgi \
         --enable-case-filter --enable-case-filter-in \
         --disable-imagemap
 
@@ -338,6 +339,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/httpd/modules/mod_cache.so
 %{_libdir}/httpd/modules/mod_case_filter.so
 %{_libdir}/httpd/modules/mod_case_filter_in.so
+%{_libdir}/httpd/modules/mod_cgi.so
 %{_libdir}/httpd/modules/mod_cgid.so
 %{_libdir}/httpd/modules/mod_charset_lite.so
 %{_libdir}/httpd/modules/mod_data.so
